@@ -22,7 +22,6 @@ const Footer = () => {
                 <FooterLink to="/products">Products</FooterLink>
                 <FooterLink to="/blog">Blog</FooterLink>
                 <FooterLink to="/contact">Contact</FooterLink>
-                <FooterLink to="/examples">Form Examples</FooterLink>
               </Nav>
             </Col>
           </Row>

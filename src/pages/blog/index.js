@@ -2,35 +2,29 @@ import * as React from "react";
 
 import Layout from "../../components/Layout";
 import BlogRoll from "../../components/BlogRoll";
+import { Container } from "react-bootstrap";
 
 export default class BlogIndexPage extends React.Component {
   render() {
     return (
       <Layout>
-        <div
+        {/* <div
           className="full-width-image-container margin-top-0"
           style={{
             backgroundImage: `url('/img/blog-index.jpg')`,
           }}
         >
-          <h1
-            className="has-text-weight-bold is-size-1"
-            style={{
-              boxShadow: "0.5rem 0 0 #f40, -0.5rem 0 0 #f40",
-              backgroundColor: "#f40",
-              color: "white",
-              padding: "1rem",
-            }}
-          >
-            Latest Stories
-          </h1>
+          <h1>Latest Stories</h1>
+        </div> */}
+        <div className="radial-gradient">
+          <Container>
+            <h1 className="py-3 mb-4 text-dark">Latest Stories</h1>
+          </Container>
         </div>
-        <section className="section">
-          <div className="container">
-            <div className="content">
-              <BlogRoll />
-            </div>
-          </div>
+        <section className="py-4">
+          <Container>
+            <BlogRoll />
+          </Container>
         </section>
       </Layout>
     );
