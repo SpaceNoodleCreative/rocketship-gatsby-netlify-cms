@@ -7,6 +7,7 @@ import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
+import { Button, Container } from "react-bootstrap";
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -23,52 +24,39 @@ export const IndexPageTemplate = ({
   return (
     <div>
       <FullWidthImage img={heroImage} title={title} subheading={subheading} />
-      <section className="section section--gradient">
-        <div className="container">
-          <div className="section">
-            <div className="columns">
-              <div className="column is-10 is-offset-1">
-                <div className="content">
-                  <div className="content">
-                    <div className="tile">
-                      <h1 className="title">{mainpitch.title}</h1>
-                    </div>
-                    <div className="tile">
-                      <h3 className="subtitle">{mainpitch.description}</h3>
-                    </div>
-                  </div>
-                  <div className="columns">
-                    <div className="column is-12">
-                      <h3 className="has-text-weight-semibold is-size-2">
-                        {heading}
-                      </h3>
-                      <p>{description}</p>
-                    </div>
-                  </div>
-                  <Features gridItems={intro.blurbs} />
-                  <div className="columns">
-                    <div className="column is-12 has-text-centered">
-                      <Link className="btn" to="/products">
-                        See all products
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      Latest stories
-                    </h3>
-                    <BlogRoll />
-                    <div className="column is-12 has-text-centered">
-                      <Link className="btn" to="/blog">
-                        Read more
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+      <section className="py-5 text-center">
+        <Container>
+          <h1 className="title">{mainpitch.title}</h1>
+          <p className="lead">{mainpitch.description}</p>
+        </Container>
+      </section>
+
+      <section className="bg-black bg-opacity-25 py-5">
+        <Container>
+          <div className="pb-3">
+            <h3>{heading}</h3>
+            <p>{description}</p>
           </div>
-        </div>
+          <Features gridItems={intro.blurbs} />
+          <div className="text-center">
+            <Button as={Link} size="lg" to="/products">
+              See all products
+            </Button>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-5">
+        <Container>
+          <h3>Latest stories</h3>
+          <BlogRoll />
+          <div className="text-center">
+            <Button as={Link} size="lg" to="/blog">
+              Read more
+            </Button>
+          </div>
+        </Container>
       </section>
     </div>
   );

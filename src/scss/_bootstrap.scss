@@ -4,6 +4,8 @@ $enable-negative-margins: true;
 // $enable-rounded: false;
 $enable-shadows: false;
 
+// Typo
+$line-height-base: 1.75;
 $font-size-base: 0.9375rem;
 $headings-font-weight: 300;
 h6,
@@ -80,5 +82,8 @@ $alert-bg-scale: 10%;
 $alert-border-scale: 10%;
 $alert-color-scale: -10%;
 $alert-link-font-weight: 500;
+
+// Navbar
+$navbar-brand-padding-y: 1px;
 
 @import "~bootstrap/scss/bootstrap";

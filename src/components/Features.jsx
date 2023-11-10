@@ -1,27 +1,23 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
+import PreviewCompatibleImage from "./PreviewCompatibleImage";
+import { Card, Col, Row } from "react-bootstrap";
 
 const FeatureGrid = ({ gridItems }) => (
-  <div className="columns is-multiline">
+  <Row>
     {gridItems.map((item) => (
-      <div key={item.text} className="column is-6">
-        <section className="section">
-          <div className="has-text-centered">
-            <div
-              style={{
-                width: "240px",
-                display: "inline-block",
-              }}
-            >
+      <Col key={item.text} sm={6}>
+        <Card body className="border-0 mb-4 pt-5">
+          <div className="pb-3 m-auto" style={{ width: "75%" }}>
+            <div className="text-center">
               <PreviewCompatibleImage imageInfo={item} />
             </div>
+            <p className="mt-4">{item.text}</p>
           </div>
-          <p>{item.text}</p>
-        </section>
-      </div>
+        </Card>
+      </Col>
     ))}
-  </div>
+  </Row>
 );
 
 FeatureGrid.propTypes = {
