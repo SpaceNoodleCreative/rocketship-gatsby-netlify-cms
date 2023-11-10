@@ -1,11 +1,11 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
-// import "./all.sass";
-import "./style.scss";
+import Footer from "./Footer";
+// import "./style.scss";
+import "../scss/all.scss";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
+import NavbarTop from "./NavbarTop";
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
@@ -15,7 +15,6 @@ const TemplateWrapper = ({ children }) => {
         <html lang="en" />
         <title>{title}</title>
         <meta name="description" content={description} />
-
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -33,14 +32,12 @@ const TemplateWrapper = ({ children }) => {
           href={`${withPrefix("/")}img/favicon-16x16.png`}
           sizes="16x16"
         />
-
         <link
           rel="mask-icon"
           href={`${withPrefix("/")}img/safari-pinned-tab.svg`}
           color="#ff4400"
         />
         <meta name="theme-color" content="#fff" />
-
         <meta property="og:type" content="business.business" />
         <meta property="og:title" content={title} />
         <meta property="og:url" content="/" />
@@ -49,7 +46,7 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix("/")}img/og-image.jpg`}
         />
       </Helmet>
-      <Navbar />
+      <NavbarTop />
       <div>{children}</div>
       <Footer />
     </div>

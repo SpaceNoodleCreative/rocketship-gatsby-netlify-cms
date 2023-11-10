@@ -10,21 +10,11 @@ export default function Component() {
           <div className="content">
             <h1>Hi people. This is a bootstrap page</h1>
             <section className="py-5 text-center linear-gradient">
-              <h1 className="display-1 mt-5 fw-bold text-dark">BIIIG TEXT</h1>
+              <h1 className="display-1 mt-5 fw-bold text-dark">
+                BIIIG TEXT here
+              </h1>
               <h1 className="display-5 mb-5 fw-bold text-dark">SMALLER TEXT</h1>
             </section>
-            <p>
-              This is an example site integrating Netlify’s form handling with
-              Gatsby
-            </p>
-            <ul>
-              <li>
-                <Link to="/contact">Basic contact form</Link>
-              </li>
-              <li>
-                <Link to="/contact/file-upload/">Form with file upload</Link>
-              </li>
-            </ul>
           </div>
         </div>
       </section>
@@ -161,31 +151,52 @@ export default function Component() {
 
         {[75, 50, 25, 10].map((o) => (
           <div className="row g-0">
-            <div className={`col bg-primary bg-opacity-${o} p-3`}>
+            <div
+              className={`col bg-primary bg-opacity-${o} p-3`}
+              key={`primary${o}`}
+            >
               Primary with body color
             </div>
-            <div className={`col bg-secondary bg-opacity-${o} p-3`}>
+            <div
+              className={`col bg-secondary bg-opacity-${o} p-3`}
+              key={`secondary${o}`}
+            >
               Secondary with body color
             </div>
-            <div className={`col bg-success text-dark bg-opacity-${o} p-3`}>
+            <div
+              className={`col bg-success text-dark bg-opacity-${o} p-3`}
+              key={`success${o}`}
+            >
               Success with body color
             </div>
-            <div className={`col bg-danger bg-opacity-${o} p-3`}>
+            <div
+              className={`col bg-danger bg-opacity-${o} p-3`}
+              key={`danger${o}`}
+            >
               Danger with body color
             </div>
-            <div className={`col bg-warning bg-opacity-${o} text-dark p-3`}>
+            <div
+              className={`col bg-warning bg-opacity-${o} text-dark p-3`}
+              key={`warning${o}`}
+            >
               Warning with body color
             </div>
-            <div className={`col bg-info bg-opacity-${o} text-dark p-3`}>
+            <div
+              className={`col bg-info bg-opacity-${o} text-dark p-3`}
+              key={`info${o}`}
+            >
               Info with body color
             </div>
-            <div className={`col bg-light bg-opacity-${o} text-dark p-3`}>
+            <div
+              className={`col bg-light bg-opacity-${o} text-dark p-3`}
+              key={`light${o}`}
+            >
               Light with body color
             </div>
-            <div className={`col bg-body bg-opacity-${o} p-3`}>
+            <div className={`col bg-body bg-opacity-${o} p-3`} key={`body${o}`}>
               Body with body color
             </div>
-            <div className={`col bg-dark bg-opacity-${o} p-3`}>
+            <div className={`col bg-dark bg-opacity-${o} p-3`} key={`dark${o}`}>
               Dark with body color
             </div>
           </div>
@@ -404,40 +415,40 @@ export default function Component() {
         </p>
         <p>
           This is a long paragraph. In{` `}
-          <a href="/wiki/Publishing" title="Publishing">
+          <Link to="/wiki/Publishing" title="Publishing">
             {` `}
             publishing
-          </a>
+          </Link>
           {` `}
           and{` `}
-          <a href="/wiki/Graphic_design" title="Graphic design">
+          <Link to="/wiki/Graphic_design" title="Graphic design">
             {` `}
             graphic design{` `}
-          </a>
+          </Link>
           {` `},
           <i>
             {` `}
             <b>Lorem ipsum</b>
           </i>
           is a{" "}
-          <a
-            href="/wiki/Placeholder_text"
+          <Link
+            to="/wiki/Placeholder_text"
             className="mw-redirect"
             title="Placeholder text"
           >
             placeholder text
-          </a>
+          </Link>
           commonly used to demonstrate the visual form of a document or a
           typeface without relying on meaningful content. <i>Lorem ipsum</i> may
           be used as a placeholder before final{" "}
-          <a href="/wiki/Copy_(publishing)" title="Copy (publishing)">
+          <Link to="/wiki/Copy_(publishing)" title="Copy (publishing)">
             copy
-          </a>{" "}
+          </Link>{" "}
           is available. It is also used to temporarily replace text in a process
           called{` `}
-          <a href="/wiki/Greeking" title="Greeking">
+          <Link to="/wiki/Greeking" title="Greeking">
             greeking
-          </a>
+          </Link>
           , which allows designers to consider the form of a webpage or
           publication, without the meaning of the text influencing the design.
         </p>
@@ -660,9 +671,9 @@ export default function Component() {
             role="alert"
           >
             A simple primary alert with{" "}
-            <a href="#" className="alert-link">
+            <Link to="/bootstrap" className="alert-link">
               an example link
-            </a>
+            </Link>
             . Give it a click if you like.
             <button
               type="button"
@@ -676,9 +687,9 @@ export default function Component() {
             role="alert"
           >
             A simple secondary alert with{" "}
-            <a href="#" className="alert-link">
+            <Link to="/bootstrap" className="alert-link">
               an example link
-            </a>
+            </Link>
             . Give it a click if you like.
             <button
               type="button"
@@ -692,9 +703,9 @@ export default function Component() {
             role="alert"
           >
             A simple success alert with{" "}
-            <a href="#" className="alert-link">
+            <Link to="/bootstrap" className="alert-link">
               an example link
-            </a>
+            </Link>
             . Give it a click if you like.
             <button
               type="button"
@@ -708,9 +719,9 @@ export default function Component() {
             role="alert"
           >
             A simple danger alert with{" "}
-            <a href="#" className="alert-link">
+            <Link to="/bootstrap" className="alert-link">
               an example link
-            </a>
+            </Link>
             . Give it a click if you like.
             <button
               type="button"
@@ -724,9 +735,9 @@ export default function Component() {
             role="alert"
           >
             A simple warning alert with{" "}
-            <a href="#" className="alert-link">
+            <Link to="/bootstrap" className="alert-link">
               an example link
-            </a>
+            </Link>
             . Give it a click if you like.
             <button
               type="button"
@@ -740,9 +751,9 @@ export default function Component() {
             role="alert"
           >
             A simple info alert with{" "}
-            <a href="#" className="alert-link">
+            <Link to="/bootstrap" className="alert-link">
               an example link
-            </a>
+            </Link>
             . Give it a click if you like.
             <button
               type="button"
@@ -756,9 +767,9 @@ export default function Component() {
             role="alert"
           >
             A simple light alert with{" "}
-            <a href="#" className="alert-link">
+            <Link to="/bootstrap" className="alert-link">
               an example link
-            </a>
+            </Link>
             . Give it a click if you like.
             <button
               type="button"
@@ -772,9 +783,9 @@ export default function Component() {
             role="alert"
           >
             A simple dark alert with{" "}
-            <a href="#" className="alert-link">
+            <Link to="/bootstrap" className="alert-link">
               an example link
-            </a>
+            </Link>
             . Give it a click if you like.
             <button
               type="button"
@@ -800,10 +811,10 @@ export default function Component() {
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
               <li className="breadcrumb-item">
-                <a href="#">Home</a>
+                <Link to="/bootstrap">Home</Link>
               </li>
               <li className="breadcrumb-item">
-                <a href="#">Library</a>
+                <Link to="/bootstrap">Library</Link>
               </li>
               <li className="breadcrumb-item active" aria-current="page">
                 Data
@@ -819,12 +830,12 @@ export default function Component() {
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a href="#" className="card-link">
+              <Link to="/bootstrap" className="card-link">
                 Card link
-              </a>
-              <a href="#" className="card-link">
+              </Link>
+              <Link to="/bootstrap" className="card-link">
                 Another link
-              </a>
+              </Link>
             </div>
           </div>
           <h2 className="mt-5">Carousel</h2>
@@ -889,7 +900,7 @@ export default function Component() {
           <div className="row">
             <div className="col">
               <ul className="list-group">
-                <li className="list-group-item disabled" aria-disabled="true">
+                <li className="list-group-item disabled" disabled>
                   A disabled item
                 </li>
                 <li className="list-group-item">A second item</li>
@@ -900,64 +911,8 @@ export default function Component() {
             </div>
             <div className="col">
               <div className="list-group">
-                <a href="#" className="list-group-item list-group-item-action">
-                  A simple default list group item
-                </a>
-
-                <a
-                  href="#"
-                  className="list-group-item list-group-item-action list-group-item-primary"
-                >
-                  A simple primary list group item
-                </a>
-                <a
-                  href="#"
-                  className="list-group-item list-group-item-action list-group-item-secondary"
-                >
-                  A simple secondary list group item
-                </a>
-                <a
-                  href="#"
-                  className="list-group-item list-group-item-action list-group-item-success"
-                >
-                  A simple success list group item
-                </a>
-                <a
-                  href="#"
-                  className="list-group-item list-group-item-action list-group-item-danger"
-                >
-                  A simple danger list group item
-                </a>
-                <a
-                  href="#"
-                  className="list-group-item list-group-item-action list-group-item-warning"
-                >
-                  A simple warning list group item
-                </a>
-                <a
-                  href="#"
-                  className="list-group-item list-group-item-action list-group-item-info"
-                >
-                  A simple info list group item
-                </a>
-                <a
-                  href="#"
-                  className="list-group-item list-group-item-action list-group-item-light"
-                >
-                  A simple light list group item
-                </a>
-                <a
-                  href="#"
-                  className="list-group-item list-group-item-action list-group-item-dark"
-                >
-                  A simple dark list group item
-                </a>
-              </div>
-            </div>
-            <div className="col">
-              <div className="list-group">
-                <a
-                  href="#"
+                <Link
+                  to="/bootstrap"
                   className="list-group-item list-group-item-action active"
                   aria-current="true"
                 >
@@ -969,8 +924,11 @@ export default function Component() {
                     Some placeholder content in a paragraph.
                   </p>
                   <small>And some small print.</small>
-                </a>
-                <a href="#" className="list-group-item list-group-item-action">
+                </Link>
+                <Link
+                  to="/bootstrap"
+                  className="list-group-item list-group-item-action"
+                >
                   <div className="d-flex w-100 justify-content-between">
                     <h5 className="mb-1">List group item heading</h5>
                     <small className="text-muted">3 days ago</small>
@@ -981,8 +939,11 @@ export default function Component() {
                   <small className="text-muted">
                     And some muted small print.
                   </small>
-                </a>
-                <a href="#" className="list-group-item list-group-item-action">
+                </Link>
+                <Link
+                  to="/bootstrap"
+                  className="list-group-item list-group-item-action"
+                >
                   <div className="d-flex w-100 justify-content-between">
                     <h5 className="mb-1">List group item heading</h5>
                     <small className="text-muted">3 days ago</small>
@@ -993,140 +954,8 @@ export default function Component() {
                   <small className="text-muted">
                     And some muted small print.
                   </small>
-                </a>
+                </Link>
               </div>
-            </div>
-          </div>
-          <h2 className="mt-5">Modal</h2>
-          <button
-            type="button"
-            className="btn btn-primary"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-          >
-            Launch demo modal
-          </button>
-          <div
-            className="modal fade"
-            id="exampleModal"
-            tabindex="-1"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-          >
-            <div className="modal-dialog modal-dialog-centered">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h1 className="modal-title fs-5" id="exampleModalLabel">
-                    Modal title
-                  </h1>
-                  <button
-                    type="button"
-                    className="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div className="modal-body">Hello! it's a me</div>
-                <div className="modal-footer">
-                  <button
-                    type="button"
-                    className="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                  >
-                    Close
-                  </button>
-                  <button type="button" className="btn btn-primary">
-                    Save changes
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <h2 className="mt-5">Forms</h2>
-          <div className="card">
-            <div className="card-body w-50 py-5 mx-auto">
-              <form className="row g-3">
-                <div className="col-md-6">
-                  <label for="inputEmail4" className="form-label">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    id="inputEmail4"
-                  />
-                </div>
-                <div className="col-md-6">
-                  <label for="inputPassword4" className="form-label">
-                    Password
-                  </label>
-                  <input
-                    type="password"
-                    className="form-control"
-                    id="inputPassword4"
-                  />
-                </div>
-                <div className="col-12">
-                  <label for="inputAddress" className="form-label">
-                    Address
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="inputAddress"
-                    placeholder="1234 Main St"
-                  />
-                </div>
-                <div className="col-12">
-                  <label for="inputAddress2" className="form-label">
-                    Address 2
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="inputAddress2"
-                    placeholder="Apartment, studio, or floor"
-                  />
-                </div>
-                <div className="col-md-6">
-                  <label for="inputCity" className="form-label">
-                    City
-                  </label>
-                  <input type="text" className="form-control" id="inputCity" />
-                </div>
-                <div className="col-md-4">
-                  <label for="inputState" className="form-label">
-                    State
-                  </label>
-                  <select id="inputState" className="form-select">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                  </select>
-                </div>
-                <div className="col-md-2">
-                  <label for="inputZip" className="form-label">
-                    Zip
-                  </label>
-                  <input type="text" className="form-control" id="inputZip" />
-                </div>
-                <div className="col-12">
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      id="gridCheck"
-                    />
-                    <label className="form-check-label" for="gridCheck">
-                      Check me out
-                    </label>
-                  </div>
-                </div>
-                <div className="col-12">
-                  <button type="submit" className="btn btn-primary">
-                    Sign in
-                  </button>
-                </div>
-              </form>
             </div>
           </div>
         </div>
