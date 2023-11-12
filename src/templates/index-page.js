@@ -126,7 +126,6 @@ export const pageQuery = graphql`
                 gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
               }
             }
-            title
             text
           }
           heading
