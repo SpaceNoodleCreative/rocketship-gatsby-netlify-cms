@@ -12,7 +12,7 @@ const FeatureGrid = ({ gridItems }) => (
             <div className="text-center">
               <PreviewCompatibleImage imageInfo={item} />
             </div>
-            {item.title ? <h4>{item.title}</h4> : null}
+            {/* {item.title ? <h4>{item.title}</h4> : null} */}
             <p className="mt-4">{item.text}</p>
           </div>
         </Card>
@@ -25,7 +25,7 @@ FeatureGrid.propTypes = {
   gridItems: PropTypes.arrayOf(
     PropTypes.shape({
       image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-      title: PropTypes.string,
+      // title: PropTypes.string,
       text: PropTypes.string,
     })
   ),
