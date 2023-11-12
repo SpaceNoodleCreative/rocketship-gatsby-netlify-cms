@@ -6,6 +6,8 @@ import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 import { Badge, Container } from "react-bootstrap";
+import FullWidthImage from "../components/FullWidthImage";
+import { getImage } from "gatsby-plugin-image";
 
 // eslint-disable-next-line
 export const BlogPostTemplate = ({
@@ -14,34 +16,40 @@ export const BlogPostTemplate = ({
   description,
   tags,
   title,
+  featuredimage,
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
 
+  const heroImage = getImage(featuredimage) || featuredimage;
   return (
-    <section className="py-4">
-      {helmet || ""}
-      <Container>
-        <h1>{title}</h1>
-        <p className="lead">{description}</p>
-        <PostContent content={content} className="content-block" />
+    <div>
+      <FullWidthImage img={heroImage} />
 
-        {tags && tags.length ? (
-          <div>
-            {tags.map((tag) => (
-              <Badge
-                key={tag + `tag`}
-                as={Link}
-                to={`/tags/${kebabCase(tag)}/`}
-                variant="secondary"
-              >
-                {tag}
-              </Badge>
-            ))}
-          </div>
-        ) : null}
-      </Container>
-    </section>
+      <section className="py-5">
+        {helmet || ""}
+        <Container>
+          <h1>{title}</h1>
+          <p className="lead">{description}</p>
+          <PostContent content={content} className="content-block" />
+
+          {tags && tags.length ? (
+            <div>
+              {tags.map((tag) => (
+                <Badge
+                  key={tag + `tag`}
+                  as={Link}
+                  to={`/tags/${kebabCase(tag)}/`}
+                  variant="secondary"
+                >
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+          ) : null}
+        </Container>
+      </section>
+    </div>
   );
 };
 
@@ -50,6 +58,7 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
+  featuredimage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   helmet: PropTypes.object,
 };
 
@@ -73,6 +82,7 @@ const BlogPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        featuredimage={post.frontmatter.featuredimage}
       />
     </Layout>
   );
@@ -92,6 +102,11 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
+        featuredimage {
+          childImageSharp {
+            gatsbyImageData(width: 1920, quality: 100, layout: FULL_WIDTH)
+          }
+        }
         date(formatString: "MMMM DD, YYYY")
         title
         description
