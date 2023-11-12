@@ -45,7 +45,7 @@ intro:
         coffee making techniques. All of the artwork on display there is for
         sale. The full price you pay goes to the artist.
     - text: We create, produce, build, film, organize, paint, craft, sew and
-        occasionally destroy things for fun
+        occasionally destroy things for fun. bla
       image: /img/logo-small.png
   heading: What we offer
   description: >
