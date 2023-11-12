@@ -37,10 +37,6 @@ intro:
         to help. You can schedule a custom 1-on-1 consultation with our baristas
         to learn anything you want to know about coffee roasting and brewing.
         Email us or call the store for details.
-    - image: /img/coffee.png
-      text: >
-        We create, produce, build, film, organize, paint, craft, sew and
-        occasionally destroy things for fun. bla. bla
   heading: What we offer
   description: >
     Kaldi is the ultimate spot for coffee lovers who want to learn about their
