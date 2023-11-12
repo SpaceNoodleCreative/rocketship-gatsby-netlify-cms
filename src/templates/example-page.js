@@ -54,7 +54,7 @@ ExamplePage.propTypes = {
 export default ExamplePage;
 
 export const ExamplePageQuery = graphql`
-  query AboutPage($id: String!) {
+  query ExamplePage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
