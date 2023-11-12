@@ -5,13 +5,16 @@ $enable-negative-margins: true;
 $enable-shadows: false;
 
 // Typo
-$line-height-base: 1.75;
+$line-height-base: 1.8;
 $font-size-base: 0.9375rem;
 $headings-font-weight: 300;
 h6,
 .h6 {
   font-weight: 500;
 }
+
+// Btn
+$btn-font-weight: bold;
 
 // Rocket colors
 :root {

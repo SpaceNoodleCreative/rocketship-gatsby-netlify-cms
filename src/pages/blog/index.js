@@ -16,9 +16,9 @@ export default class BlogIndexPage extends React.Component {
         >
           <h1>Latest Stories</h1>
         </div> */}
-        <div className="radial-gradient">
+        <div className="radial-gradient-inverse">
           <Container>
-            <h1 className="py-3 mb-4 text-dark">Latest Stories</h1>
+            <h1 className="py-3 mb-4">Latest news</h1>
           </Container>
         </div>
         <section className="py-4">

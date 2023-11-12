@@ -27,12 +27,18 @@ const Footer = () => {
           </Row>
         </Container>
       </div>
-      <div className="bg-black bg-opacity-25 p-2 d-flex justify-content-between">
+      <div className="bg-black bg-opacity-25 py-2 px-3 d-flex justify-content-between">
         <div className="opacity-75">&copy; TheRocketship {currentYear}</div>
         <div className="opacity-75">
           Made with{" "}
           <span role="img" aria-label="heart">
             💜
+          </span>
+        </div>
+        <div className="opacity-75">
+          Thank you for flying with us{" "}
+          <span role="img" aria-label="rocket">
+            🚀
           </span>
         </div>
       </div>
