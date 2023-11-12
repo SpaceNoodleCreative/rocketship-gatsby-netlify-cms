@@ -47,7 +47,7 @@ intro:
     - image: /img/logo-small.png
       text: >
         We create, produce, build, film, organize, paint, craft, sew and
-        occasionally destroy things for fun. bla
+        occasionally destroy things for fun. bla. bla
   heading: What we offer
   description: >
     Kaldi is the ultimate spot for coffee lovers who want to learn about their
