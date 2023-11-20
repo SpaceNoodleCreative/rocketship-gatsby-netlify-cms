@@ -7,6 +7,7 @@ import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
 import { Button, Container } from "react-bootstrap";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -16,6 +17,7 @@ export const IndexPageTemplate = ({
   subheading,
   mainpitch,
   description,
+  main,
   intro,
 }) => {
   const heroImage = getImage(image) || image;
@@ -28,6 +30,7 @@ export const IndexPageTemplate = ({
         <Container>
           <h1 className="title">{mainpitch.title}</h1>
           <p className="lead">{mainpitch.description}</p>
+          <p>{description}</p>
         </Container>
       </section>
 
@@ -37,15 +40,40 @@ export const IndexPageTemplate = ({
             <h3>{heading}</h3>
             <p>{description}</p>
           </div>
+        </Container>
+      </section>
+      <section className="bg-black bg-opacity-25 py-5">
+        <Container>
+          <div className="pb-3">
+            <h3>{intro.heading}</h3>
+            <p>{intro.description}</p>
+          </div>
           <Features gridItems={intro.blurbs} />
           <div className="text-center">
-            <Button as={Link} size="lg" to="/products">
-              See all products
+            <Button variant="warning" as={Link} size="lg" to="/products">
+              more...
             </Button>
           </div>
         </Container>
       </section>
+      <section className="section bg-gradient py-5">
+        <div className="container">
+          <h3 className="has-text-weight-semibold is-size-3">{main.heading}</h3>
+          <p>{main.description}</p>
 
+          <article className="tile is-child">
+            <PreviewCompatibleImage imageInfo={main.image1} />
+          </article>
+
+          <article className="tile is-child">
+            <PreviewCompatibleImage imageInfo={main.image2} />
+          </article>
+
+          <article className="tile is-child">
+            <PreviewCompatibleImage imageInfo={main.image3} />
+          </article>
+        </div>
+      </section>
       <section className="py-5">
         <Container>
           <h3>Latest stories</h3>
@@ -67,6 +95,13 @@ IndexPageTemplate.propTypes = {
   heading: PropTypes.string,
   subheading: PropTypes.string,
   mainpitch: PropTypes.object,
+  main: PropTypes.shape({
+    heading: PropTypes.string,
+    description: PropTypes.string,
+    image1: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    image2: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    image3: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  }),
   description: PropTypes.string,
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
@@ -86,6 +121,7 @@ const IndexPage = ({ data }) => {
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
+        main={frontmatter.main}
       />
     </Layout>
   );
@@ -118,6 +154,34 @@ export const pageQuery = graphql`
           description
         }
         description
+        main {
+          heading
+          description
+          image1 {
+            alt
+            image {
+              childImageSharp {
+                gatsbyImageData(width: 526, quality: 92, layout: CONSTRAINED)
+              }
+            }
+          }
+          image2 {
+            alt
+            image {
+              childImageSharp {
+                gatsbyImageData(width: 526, quality: 92, layout: CONSTRAINED)
+              }
+            }
+          }
+          image3 {
+            alt
+            image {
+              childImageSharp {
+                gatsbyImageData(quality: 72, layout: FULL_WIDTH)
+              }
+            }
+          }
+        }
         intro {
           blurbs {
             image {
